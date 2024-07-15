@@ -1,1 +1,56 @@
-<!doctype html><html lang="kr"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="nakjun : web simulation framework with three.js"/><link rel="manifest" href="/manifest.json"/><title>Web Simulation Framework</title><script defer="defer" src="/static/js/main.e57766d2.js"></script><link href="/static/css/main.f855e6bc.css" rel="stylesheet"></head><body><div id="root"></div></body></html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>GMCOM AI(G-AI)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- <div class="sidebar">
+      <h2>Chat History</h2>
+      <ul class="chat-history">
+        <li>Conversation 1</li>
+        <li>Conversation 2</li>
+        <li>Conversation 3</li>
+      </ul>
+    </div> -->
+    <div class="main-content">
+      <div class="top-content">
+        <!-- <div class="hamburger-menu" onclick="toggleMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div> -->
+      </div>
+      <div id="chat-area" class="chat-area">
+        <!-- Chat messages will be displayed here -->
+      </div>
+      <div class="input-area">
+        <textarea id="prompt" class="input_area" placeholder="메시지를 이곳에 입력해주세요"></textarea>
+        <button class="input_button" onclick="sendMessage()">메시지 보내기</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="right-menu">
+    <div class="close-menu" onclick="toggleMenu()">X</div>
+    <h2>Navigation Menu</h2>
+    <ul>
+      <li><a href="https://websim.ai/gemini/settings">Settings</a></li>
+      <li><a href="https://websim.ai/gemini/profile">Profile</a></li>
+      <li><a href="https://websim.ai/gemini/help">Help</a></li>
+    </ul>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.right-menu').classList.toggle('active');
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>
