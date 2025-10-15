@@ -1,4 +1,43 @@
 const publications = [
+  {
+    title: 'Toward Real-Time Scalable Rigid-Body Simulation Using GPU-Optimized Collision Detection and Response',
+    authors: ['Nak-Jun Sung', 'Min Hong'],
+    venue: 'Mathematics 13 (19), 3230', year: 2025, tags: ['graphics', 'simulation', 'GPGPU'],
+    links: { pdf: '#', project: '#', code: '#' },
+    bibtex: `@article{sung2025toward,
+  title={Toward Real-Time Scalable Rigid-Body Simulation Using GPU-Optimized Collision Detection and Response},
+  author={Sung, Nak-Jun and Hong, Min},
+  journal={Mathematics},
+  volume={13},
+  number={19},
+  pages={3230},
+  year={2025},
+  publisher={MDPI}
+}`
+  },
+  {
+    title: 'A State-of-the-Art Review of the Real-time Deformable Model Using Novel Approaches and Deep Learning',
+    authors: ['Hongly Va', 'Nak-Jun Sung', 'Makara Mao', 'Jun-Ma', 'Min-Hyung Choi', 'Min Hong'],
+    venue: 'KSII Transactions on Internet and Information Systems 19 (9), 2855-2875', 
+    year: 2025, 
+    tags: ['review', 'deformable model', 'deep learning'],
+    links: { 
+      pdf: '#', 
+      doi: 'https://doi.org/10.3837/tiis.2025.09.003', 
+      publisher: 'https://www.itiis.org/digital-library/103305'
+    },
+    bibtex: `@article{tiis:103305,
+  title={A State-of-the-Art Review of the Real-time Deformable Model Using Novel Approaches and Deep Learning},
+  author={Hongly Va and Nak-Jun Sung and Makara Mao and Jun-Ma and Min-Hyung Choi and Min Hong},
+  journal={KSII Transactions on Internet and Information Systems},
+  DOI={10.3837/tiis.2025.09.003},
+  volume={19},
+  number={9},
+  year={2025},
+  month={September},
+  pages={2855-2875}
+}`
+  },
     {
       title: 'AMRG: Extend Vision Language Models for Automatic Mammography Report Generation',
       authors: ['Nak-Jun Sung', 'Donghyeon Lee', 'Bo Hwa Choi', 'Chae Jung Park'],
