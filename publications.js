@@ -159,5 +159,35 @@ const publications = [
     number={1},
     year={2020}
   }`
-    }
+    },
+    {
+      title: 'Activity and Safety Recognition using Smart Work Shoes for Construction Worksite',
+      authors: ['Changwon Wang', 'Young Kim', 'Seung Hyun Lee', 'Nak-Jun Sung', 'Se Dong Min', 'Min-Hyung Choi'],
+      venue: 'KSII Transactions on Internet & Information Systems 14 (2)', year: 2020, tags: ['machine learning'],
+      links: { pdf: 'https://itiis.org/digital-library/23269', project: '#', code: '#' },
+      bibtex: `@article{wang2020activity,
+      title={Activity and Safety Recognition using Smart Work Shoes for Construction Worksite.},
+      author={Wang, Changwon and Kim, Young and Lee, Seung Hyun and Sung, Nak-Jun and Min, Se Dong and Choi, Min-Hyung},
+      journal={KSII Transactions on Internet \& Information Systems},
+      volume={14},
+      number={2},
+      year={2020}
+    }`
+    },
+    {
+      title: 'Real-time augmented reality physics simulator for education',
+      authors: ['Nak-Jun Sung', 'Jun Ma', 'Yoojoo Choi', 'Min Hong'],
+      venue: 'Applied Sciences 9 (19)', year: 2019, tags: ['computer graphics', 'simulation', 'AR'],
+      links: { pdf: 'https://www.mdpi.com/2076-3417/9/19/4019', project: '#', code: '#' },
+      bibtex: `@article{sung2019real,
+      title={Real-time augmented reality physics simulator for education},
+      author={Sung, Nak-Jun and Ma, Jun and Choi, Yoo-Joo and Hong, Min},
+      journal={Applied Sciences},
+      volume={9},
+      number={19},
+      pages={4019},
+      year={2019},
+      publisher={MDPI}
+    }`
+    },
   ];
