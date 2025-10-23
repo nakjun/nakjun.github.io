@@ -3,21 +3,60 @@ const state = {
   tag: 'all',
   year: 'all'
 };
+// publications.js에서 publications 변수를 가져와야 합니다.
+// 아래와 같이 publications.js를 import(혹은 include)해야 publications 변수를 사용할 수 있습니다.
 
-// import 문법은 브라우저 환경에서 바로 사용할 수 없으므로, 
-// publications.js 파일에서 publications 변수를 전역(global)으로 선언해두고 
-// script 태그로 publications.js를 먼저 불러온 뒤 script.js를 불러오면 됩니다.
-// 즉, import를 사용하지 않고, publications 변수가 이미 전역에 있다고 가정하여 바로 사용하면 됩니다.
-// (index.html에서 <script src="publications.js"></script>가 먼저, 그 다음 <script src="script.js"></script> 순서로 로드해야 함)
+// 방법 1: <script> 태그로 publications.js를 먼저 불러오고 script.js를 나중에 불러오는 것이 가장 간단합니다.
+// index.html에서
+// <script src="publications.js"></script>
+// <script src="script.js"></script>
+// 순서로 추가되어야 합니다.
 
-// publications 변수는 이미 전역(global)으로 선언되어 있으므로 import가 필요 없습니다.
-// 아래와 같이 import 문을 제거하고, publications 변수를 바로 사용하세요.
+// 방법 2: 만약 publications.js가 이미 <script>로 불러와진 상태라면 별도 조치 필요 없습니다.
+
+// 방법 3: 모듈 시스템을 쓴다면 아래처럼 import 해야 하지만, 브라우저 환경에서는 보통 위 방법 1을 사용합니다.
+// import { publications } from './publications.js';
+
+// publications 변수가 정상적으로 정의되어 있는지 확인하는 코드 (디버깅용)
+if (typeof publications === 'undefined') {
+  console.error('publications 변수가 정의되어 있지 않습니다. index.html에서 publications.js가 script.js보다 먼저 로드되어야 합니다.');
+}
 
 
 const projects = [
   {
     title: '암질환 의료영상과 판독문을 이용한 생성형 인공지능 모델 개발 연구',
     desc: '국립암센터, 2024.11.18 ~ 현재',
+    links: {}
+  },
+  {
+    title:'오픈 메타버스 플랫폼 활용을 통한 감염병 내용 교육 프로그램 콘텐츠 개발',
+    desc: '순천향대학교 천안병원, 2024.06.25 ~ 2024.08.31',
+    links: {}
+  },
+  {
+    title: '현실감 있는 3D 콘텐츠 개발을 위한 딥러닝 기반 시뮬레이션 특성값 예측 연구',
+    desc: '교육부, 2024.03.01 ~ 2024.08.31',
+    links: {}
+  },
+  {
+    title: '모듈러 음압병동 인공지능설계 솔루션 개발 및 실물 mock-up 실증 연구',
+    desc: '보건복지부, 2023.01.01 ~ 2023.11.30',
+    links: {}
+  },
+  {
+    title: '환자 맞춤형 복부 수술 시뮬레이터',
+    desc: '보건복지부, 2021.07.01 ~ 2021.12.31',
+    links: {}
+  },
+  {
+    title: '수술 환경 인지기반 반능동형 정밀 수술로봇 플랫폼 개발',
+    desc: '범부처전주기의료기기연구개발사업단(과기정통부, 복지부, 산업부), 2020.09.01 ~ 2022.02.28',
+    links: {}
+  },
+  {
+    title: '변형물체 시뮬레이션과 공간 분석 기술을 접목한 실시간 상호작용 증강현실 연구',
+    desc: '과학기술정보통신부, 2019.06.01 ~ 2020.03.31',
     links: {}
   },
   {
@@ -40,32 +79,6 @@ const projects = [
     desc: '과학기술정보통신부, 2017.03.01 ~ 2019.02.28',
     links: {}
   },
-  {
-    title: '변형물체 시뮬레이션과 공간 분석 기술을 접목한 실시간 상호작용 증강현실 연구',
-    desc: '과학기술정보통신부, 2019.06.01 ~ 2020.03.31',
-    links: {}
-  },
-  {
-    title: '환자 맞춤형 복부 수술 시뮬레이터',
-    desc: '보건복지부, 2021.07.01 ~ 2021.12.31',
-    links: {}
-  },
-  {
-    title: '수술 환경 인지기반 반능동형 정밀 수술로봇 플랫폼 개발',
-    desc: '범부처전주기의료기기연구개발사업단(과기정통부, 복지부, 산업부), 2020.09.01 ~ 2022.02.28',
-    links: {}
-  },
-  {
-    title: '모듈러 음압병동 인공지능설계 솔루션 개발 및 실물 mock-up 실증 연구',
-    desc: '보건복지부, 2023.01.01 ~ 2023.11.30',
-    links: {}
-  },
-  {
-    title:'오픈 메타버스 플랫폼 활용을 통한 감염병 내용 교육 프로그램 콘텐츠 개발',
-    desc: '순천향대학교 천안병원, 2024.06.25 ~ 2024.08.31',
-    links: {}
-  }
-
 ];
 const career = [
   {org:'국립암센터 국제암대학원대학교, 보건AI학과', role:'산학조교수', period:'2025.03 — 현재', detail:'의료 인공지능 연구'},
@@ -83,10 +96,10 @@ const teaching = [
   '[lecture] 자료구조 실습, 2019.03 - 2019.06, 순천향대학교 컴퓨터소프트웨어공학과',
 ];
 const awards = [
-  '2025 한국데이터사이언스학회 장려논문상 (한국데이터사이언스학회)',
-  'ICONI 2017 Outstanding Paper Award (한국인터넷정보학회) - "Coherent Behavior Level-of-detail in Mass-Spring Simulations."',
+  '2025 한국데이터사이언스학회 장려논문상 (한국데이터사이언스학회). Title: 확산 모델을 활용한 유방촬영술 영상 생성',
+  'ICONI 2017 Outstanding Paper Award (한국인터넷정보학회). Title: Coherent Behavior Level-of-detail in Mass-Spring Simulations',
   'ICT연구센터지원사업 창의인재평가 우수상 (정보통신기술진흥센터/정보통신기획평가원)',
-  '2015 인터넷정보학회 추계학술대회 우수논문상 (한국인터넷정보학회)'
+  '2015 인터넷정보학회 추계학술대회 우수논문상 (한국인터넷정보학회). Title: 키넥트를 활용한 증강현실 시스템 구현'
 ];
 const service = [
   'Reviewer: AAAI2026'
@@ -123,7 +136,7 @@ function renderPubs(){
           <div class="meta">${formattedAuthors.join(', ')} · <span class="mono">${p.venue}</span> · ${p.year}</div>
           <div class="chipset" style="margin-top:8px">${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}</div>
           <div class="links" style="margin-top:10px">
-            ${p.links.pdf?`<a href="${p.links.pdf}" target="_blank" rel="noopener">PDF</a>`:''}
+            ${p.links.pdf?`<a href="${p.links.pdf}" target="_blank" rel="noopener">Link</a>`:''}
             ${p.links.project?`<a href="${p.links.project}" target="_blank" rel="noopener">Project</a>`:''}
             ${p.links.code?`<a href="${p.links.code}" target="_blank" rel="noopener">Code</a>`:''}
             <button class="mono tiny" data-bib="${encodeURIComponent(p.bibtex)}">Copy BibTeX</button>
